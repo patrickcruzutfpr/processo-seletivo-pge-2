@@ -1,0 +1,5 @@
+{
+  "name": "Painel Processo Seletivo PGE SP",
+  "description": "An interactive job board to explore positions and functions available in a public selection process for the Procuradoria Geral do Estado de São Paulo (PGE-SP). Users can view detailed information for each role, including responsibilities, requirements, and salary.",
+  "requestFramePermissions": []
+}
