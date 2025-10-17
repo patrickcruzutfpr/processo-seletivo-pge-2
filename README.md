@@ -25,22 +25,26 @@ An interactive and AI-powered job board designed to explore positions and functi
 
 - [Key Features](#key-features)
 - [Features in Detail](#features-in-detail)
-    - [Dynamic Job List](#dynamic-job-list)
-    - [Advanced Search & Filtering](#advanced-search--filtering)
-    - [Flexible Sorting](#flexible-sorting)
-    - [Detailed Job View](#detailed-job-view)
-    - [AI-Powered Chatbot](#ai-powered-chatbot)
-    - [Integrated Document Viewer](#integrated-document-viewer)
-    - [Responsive Design and Theming](#responsive-design-and-theming)
-    - [Data, Types, and Utilities](#data-types-and-utilities)
-    - [Loading and Error States](#loading-and-error-states)
+  - [Dynamic Job List](#dynamic-job-list)
+  - [Advanced Search & Filtering](#advanced-search--filtering)
+  - [Flexible Sorting](#flexible-sorting)
+  - [Detailed Job View](#detailed-job-view)
+  - [AI-Powered Chatbot](#ai-powered-chatbot)
+  - [Integrated Document Viewer](#integrated-document-viewer)
+  - [Responsive Design and Theming](#responsive-design-and-theming)
+  - [Data, Types, and Utilities](#data-types-and-utilities)
+  - [Loading and Error States](#loading-and-error-states)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
-    - [Key Architectural Concepts](#key-architectural-concepts)
+  - [Key Architectural Concepts](#key-architectural-concepts)
 - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Local Development](#local-development)
+  - [Prerequisites](#prerequisites)
+  - [Local Development](#local-development)
 - [AI Service Abstraction](#ai-service-abstraction)
+- [Documentation](#-documentation)
+- [License](#-license)
+  - [Credits](#credits)
+  
 
 ## ✨ Key Features
 
@@ -179,8 +183,15 @@ To add a new provider (e.g., OpenAI), you would simply:
 3.  Register the new provider in `aiService.ts`.
 
 This design makes the application flexible and future-proof.
+---
+
+
+## 📚 Documentation
+
+I have only documented the main project files. As soon as I can, I will complete all the project documentation. If you have any questions, please send them to my GitHub https://github.com/patrickcruzutfpr or my LinkedIn https://linkedin.com/in/patrickmcruz.
 
 ---
+
 
 ## 📄 License
 
@@ -193,7 +204,8 @@ For more details, see the [LICENSE](LICENSE) file or visit [GNU AGPL v3.0](https
 ### Credits
 
 **Created by:** [Patrick Motin Cruz](https://github.com/patrickcruzutfpr)  
-**Role:** ML Software Developer
+**Post-Graduate:** Data Scientist Student in Federal University of Technology - Paraná/Brazil (UTFPR) .  
+**ML Software Developer** at Prefeitura Municipal de Curitiba. Full-time
 
 ---
 
