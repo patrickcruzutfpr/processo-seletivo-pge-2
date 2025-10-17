@@ -6,6 +6,27 @@ An interactive and AI-powered job board designed to explore positions and functi
 
 ---
 
+## 📑 Index
+
+- [Key Features](#key-features)
+- [Features in Detail](#features-in-detail)
+    - [Dynamic Job List](#dynamic-job-list)
+    - [Advanced Search & Filtering](#advanced-search--filtering)
+    - [Flexible Sorting](#flexible-sorting)
+    - [Detailed Job View](#detailed-job-view)
+    - [AI-Powered Chatbot](#ai-powered-chatbot)
+    - [Integrated Document Viewer](#integrated-document-viewer)
+    - [Responsive Design and Theming](#responsive-design-and-theming)
+    - [Data, Types, and Utilities](#data-types-and-utilities)
+    - [Loading and Error States](#loading-and-error-states)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+    - [Key Architectural Concepts](#key-architectural-concepts)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Local Development](#local-development)
+- [AI Service Abstraction](#ai-service-abstraction)
+
 ## ✨ Key Features
 
 - **Dynamic Job List**: Browse all available positions with key information at a glance.
