@@ -11,6 +11,8 @@
 [![Repo Size](https://img.shields.io/github/repo-size/patrickcruzutfpr/processo-seletivo-pge-2)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2)
 [![Contributors](https://img.shields.io/github/contributors/patrickcruzutfpr/processo-seletivo-pge-2)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/pulls)
+[![GitHub Stars](https://img.shields.io/github/stars/patrickcruzutfpr/processo-seletivo-pge-2?style=social)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/patrickcruzutfpr/processo-seletivo-pge-2?style=social)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/network/members)
 
 An interactive and AI-powered job board designed to explore positions and functions available in a public selection process for the Procuradoria Geral do Estado de São Paulo (PGE-SP). This application provides a modern, user-friendly interface for potential candidates to search, filter, and understand the available roles in detail.
 
