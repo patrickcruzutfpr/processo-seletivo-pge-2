@@ -2,10 +2,20 @@ import React from 'react';
 import type { Job } from '../../types';
 import { formatCurrency } from '../../utils/currency';
 
+/**
+ * Props for the JobDetails component.
+ */
 interface JobDetailsProps {
+  /** The job object to display details for, or null if no job is selected. */
   job: Job | null;
 }
 
+/**
+ * A card component to display a section of job details with a title.
+ * @param {object} props - The component props.
+ * @param {string} props.title - The title of the card section.
+ * @param {React.ReactNode} props.children - The content to display within the card.
+ */
 const DetailCard: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
   <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md mb-6 transition-colors duration-300">
     <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 border-b dark:border-gray-700 pb-3 mb-4">{title}</h3>
@@ -13,6 +23,13 @@ const DetailCard: React.FC<{ title: string; children: React.ReactNode }> = ({ ti
   </div>
 );
 
+/**
+ * Displays a single piece of information with an icon, a label, and a value.
+ * @param {object} props - The component props.
+ * @param {React.ReactNode} props.icon - The icon to display.
+ * @param {string} props.label - The label for the information.
+ * @param {string} props.value - The value of the information.
+ */
 const InfoItem: React.FC<{ icon: React.ReactNode; label: string; value: string }> = ({ icon, label, value }) => (
     <div className="flex items-start text-sm mb-3">
         <span className="text-primary dark:text-red-400 mr-3 mt-1">{icon}</span>
@@ -23,6 +40,9 @@ const InfoItem: React.FC<{ icon: React.ReactNode; label: string; value: string }
     </div>
 );
 
+/**
+ * A simple checkmark icon component used for list items.
+ */
 const CheckIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -30,6 +50,11 @@ const CheckIcon = () => (
 );
 
 
+/**
+ * Displays the detailed information for a selected job.
+ * If no job is selected, it shows a placeholder message.
+ * @param {JobDetailsProps} props - The component props.
+ */
 const JobDetails: React.FC<JobDetailsProps> = ({ job }) => {
   if (!job) {
     return (
@@ -48,6 +73,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({ job }) => {
 
   return (
     <div className="transition-all duration-500 ease-in-out">
+        {/* Header Card */}
         <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md mb-6 transition-colors duration-300">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{job.denominacaoCompleta}</h2>
             <div className="flex items-center flex-wrap gap-2 mt-3">
@@ -63,6 +89,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({ job }) => {
             </div>
         </div>
 
+      {/* Details Sections */}
       <DetailCard title="Principais Atribuições">
         <ul className="space-y-3">
           {job.principaisAtribuicoes.map((attr, index) => (

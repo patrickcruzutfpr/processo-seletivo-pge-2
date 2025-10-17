@@ -3,29 +3,70 @@ import { getAiChatService } from '../../services/aiService';
 import { findRelevantJobs } from '../../utils/jobSearch';
 import Spinner from './Spinner';
 
+/**
+ * Defines the props for the Chatbot component.
+ */
 interface ChatbotProps {
+  /**
+   * A callback function to be invoked when the chatbot is closed.
+   */
   onClose: () => void;
 }
 
+/**
+ * Represents a single message in the chat.
+ */
 interface Message {
+  /**
+   * The sender of the message.
+   */
   sender: 'user' | 'bot';
+  /**
+   * The text content of the message.
+   */
   text: string;
 }
 
+/**
+ * A chatbot component that allows users to ask questions about job vacancies
+ * and get answers from an AI assistant.
+ * @param {ChatbotProps} props The props for the component.
+ */
 const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
+  /**
+   * State for storing the history of chat messages.
+   */
   const [messages, setMessages] = useState<Message[]>([
     { sender: 'bot', text: 'Olá! Como posso ajudar a encontrar informações sobre as vagas da PGE-SP?' }
   ]);
+  /**
+   * State for the user's current input in the text field.
+   */
   const [inputValue, setInputValue] = useState('');
+  /**
+   * State to indicate if the chatbot is currently waiting for a response from the AI.
+   */
   const [isLoading, setIsLoading] = useState(false);
+  /**
+   * A ref to the end of the messages list, used for auto-scrolling.
+   */
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  /**
+   * Scrolls the message container to the bottom.
+   */
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Auto-scroll to the latest message whenever the messages state updates.
   useEffect(scrollToBottom, [messages]);
 
+  /**
+   * Handles the submission of a new message from the user.
+   * It sends the message to the AI service and displays the response.
+   * @param {React.FormEvent} e The form event.
+   */
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     const userMessage = inputValue.trim();
@@ -36,13 +77,13 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
     setIsLoading(true);
 
     try {
-      // 1. Find relevant context from available jobs
+      // 1. Find relevant context from available jobs based on the user's query.
       const relevantJobs = findRelevantJobs(userMessage);
 
-      // 2. Get the configured AI service
+      // 2. Get the configured AI chat service.
       const aiService = getAiChatService(); 
 
-      // 3. Call the service with the user's query and the found context
+      // 3. Call the service with the user's query and the found context.
       const botResponse = await aiService.chat(userMessage, relevantJobs);
       
       setMessages(prev => [...prev, { sender: 'bot', text: botResponse }]);

@@ -9,22 +9,55 @@ import Anexo1SalarioPdf from './components/documents/Anexo1SalarioPdf';
 import Chatbot from './components/Chatbot/Chatbot';
 import ChatbotFab from './components/Chatbot/ChatbotFab';
 
+/**
+ * Defines the possible document views.
+ * 'processo-seletivo': The main selective process document.
+ * 'anexo-1-salario': The salary annex document.
+ * null: No document is being viewed.
+ */
 export type DocumentView = 'processo-seletivo' | 'anexo-1-salario' | null;
 
+/**
+ * The keys that can be used for sorting the job list.
+ */
 export type SortKey = 'cargoFuncao' | 'remuneracao';
+
+/**
+ * The order for sorting (ascending or descending).
+ */
 export type SortOrder = 'asc' | 'desc';
+
+/**
+ * Configuration for sorting the job list.
+ */
 export interface SortConfig {
+  /** The key to sort by. */
   key: SortKey;
+  /** The order to sort in. */
   order: SortOrder;
 }
 
+/**
+ * Defines the filter options for job levels.
+ * 'all': Show all levels.
+ * 'CCESP': Show only 'Cargo de Carreira do Estado de São Paulo'.
+ * 'FCESP': Show only 'Função de Confiança do Estado de São Paulo'.
+ */
 export type LevelFilter = 'all' | 'CCESP' | 'FCESP';
 
 
+/**
+ * The main App component. It orchestrates the entire application,
+ * managing state for job searching, sorting, filtering, and displaying details.
+ */
 const App: React.FC = () => {
+  /** State for the currently selected job in the details view. */
   const [selectedJob, setSelectedJob] = useState<Job | null>(jobs[0] || null);
+  /** State for the current search term entered by the user. */
   const [searchTerm, setSearchTerm] = useState('');
+  /** State for the selected job level filter. */
   const [levelFilter, setLevelFilter] = useState<LevelFilter>('all');
+  /** State for the application's color theme ('light' or 'dark'). */
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme && savedTheme !== 'system') {
@@ -32,18 +65,27 @@ const App: React.FC = () => {
     }
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
+  /** State to control which document is currently being viewed in the PDF viewer. */
   const [viewingDocument, setViewingDocument] = useState<DocumentView>(null);
+  /** State for the current sorting configuration of the job list. */
   const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'remuneracao', order: 'desc' });
+  /** State to control the visibility of the chatbot. */
   const [isChatOpen, setIsChatOpen] = useState(false);
 
+  /** Closes the currently viewed document. */
   const handleCloseDocument = () => {
     setViewingDocument(null);
   };
   
+  /**
+   * Sets the document to be viewed.
+   * @param doc The identifier of the document to view.
+   */
   const handleViewDocument = (doc: 'processo-seletivo' | 'anexo-1-salario') => {
     setViewingDocument(doc);
   };
 
+  // Effect to apply the theme class to the root element and save it to localStorage.
   useEffect(() => {
     const root = window.document.documentElement;
     const isDark = theme === 'dark';
@@ -52,18 +94,35 @@ const App: React.FC = () => {
     localStorage.setItem('theme', theme);
   }, [theme]);
   
+  /**
+   * Sets the selected job to be displayed in the details view.
+   * @param job The job to select.
+   */
   const handleSelectJob = (job: Job) => {
     setSelectedJob(job);
   };
 
+  /**
+   * Updates the search term state based on user input.
+   * @param event The input change event.
+   */
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
+  /**
+   * Updates the job level filter state.
+   * @param level The selected level to filter by.
+   */
   const handleLevelFilterChange = (level: LevelFilter) => {
     setLevelFilter(level);
   };
 
+  /**
+   * Updates the sorting configuration for the job list.
+   * Toggles order if the same key is selected, otherwise sets a default order.
+   * @param key The sort key to apply.
+   */
   const handleSortChange = (key: SortKey) => {
     setSortConfig(currentConfig => {
       if (currentConfig.key === key) {
@@ -74,6 +133,9 @@ const App: React.FC = () => {
     });
   };
 
+  /**
+   * A memoized list of jobs that are filtered and sorted based on the current state.
+   */
   const sortedJobs = useMemo(() => {
     const filteredJobs = jobs.filter(job => {
       const searchTermMatch =
@@ -98,6 +160,10 @@ const App: React.FC = () => {
   }, [jobs, searchTerm, sortConfig, levelFilter]);
   
   
+  /**
+   * Renders the appropriate PDF document viewer based on the `viewingDocument` state.
+   * @returns A React component for the PDF viewer or null.
+   */
   const renderDocument = () => {
     switch(viewingDocument) {
       case 'processo-seletivo':
