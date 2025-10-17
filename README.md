@@ -5,6 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-3178C6?logo=typescript&logoColor=white&labelColor=000000)](https://www.typescriptlang.org/)
 [![Google Gemini API](https://img.shields.io/badge/Google%20Gemini%20API-1.25.0-1a73e8?logo=google&logoColor=white&labelColor=000000)](https://www.npmjs.com/package/@google/genai)
 [![Node.js >= 18](https://img.shields.io/badge/Node.js-%E2%89%A5%2018-339933?logo=node.js&logoColor=white&labelColor=000000)](https://nodejs.org/)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 [![Last Commit](https://img.shields.io/github/last-commit/patrickcruzutfpr/processo-seletivo-pge-2)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/commits)
 [![Open Issues](https://img.shields.io/github/issues/patrickcruzutfpr/processo-seletivo-pge-2)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/issues)
@@ -178,3 +179,22 @@ To add a new provider (e.g., OpenAI), you would simply:
 3.  Register the new provider in `aiService.ts`.
 
 This design makes the application flexible and future-proof.
+
+---
+
+## 📄 License
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+
+You are free to use, modify, and distribute this software under the terms of the AGPL-3.0 license. If you run a modified version of this software on a server and allow users to interact with it over a network, you must make the source code of your modified version available to those users.
+
+For more details, see the [LICENSE](LICENSE) file or visit [GNU AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.html).
+
+### Credits
+
+**Created by:** [Patrick Motin Cruz](https://github.com/patrickcruzutfpr)  
+**Role:** ML Software Developer
+
+---
+
+© 2025 Patrick Motin Cruz. All rights reserved under AGPL-3.0.
