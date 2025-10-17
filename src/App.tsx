@@ -202,6 +202,9 @@ const App: React.FC = () => {
 
       <footer className="text-center py-4 mt-8 border-t border-gray-200 dark:border-gray-800">
           <p className="text-sm text-gray-500 dark:text-gray-400">&copy; 2024 Procuradoria Geral do Estado de São Paulo. All rights reserved.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Developed by <a href="https://github.com/patrickmcruz" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@patrickmcruz</a>
+          </p>
       </footer>
       
       {renderDocument()}
