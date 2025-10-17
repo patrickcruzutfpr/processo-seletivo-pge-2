@@ -17,6 +17,54 @@ An interactive and AI-powered job board designed to explore positions and functi
 - **Responsive Design**: A fully responsive layout that works seamlessly on desktop, tablet, and mobile devices.
 - **Light & Dark Mode**: Switch between themes for comfortable viewing in any lighting condition.
 
+## 🧭 Features in Detail
+
+### Dynamic Job List
+- Displays all positions with key fields (title, level, remuneration) and a concise summary.
+- Selecting a card opens the full details view; the list preserves your current search, filter, and sort state.
+- Implementation: `src/components/Job/JobList.tsx`.
+
+### Advanced Search & Filtering
+- Free-text search finds matches across relevant job fields (title, description, requirements, competencies).
+- Search is normalized to handle casing and common diacritics.
+- Filter by level to narrow positions: `CCESP` or `FCESP`.
+- Implementation: `src/utils/jobSearch.ts` (scoring/normalization), wiring in `JobList.tsx`.
+
+### Flexible Sorting
+- Sort by job title (A→Z / Z→A) or by remuneration (asc/desc).
+- Sorting works together with current search and filters.
+- Implementation: sort helpers within `src/components/Job/JobList.tsx` and currency helpers in `src/utils/currency.ts`.
+
+### Detailed Job View
+- Rich breakdown including: responsibilities, requirements, competencies, and remuneration.
+- Clear layout for quick scanning; long sections are split into readable blocks.
+- Implementation: `src/components/Job/JobDetails.tsx`.
+
+### AI‑Powered Chatbot
+- Ask natural‑language questions like “Which roles require leadership experience?” or “Compare salaries for CCESP vs FCESP.”
+- Uses Google Gemini through a small abstraction layer so providers can be swapped easily.
+- Context awareness: the chatbot can use the current list of jobs as context for more precise answers.
+- Implementation: UI in `src/components/Chatbot/Chatbot.tsx`; abstraction in `src/services/aiService.ts`; provider in `src/services/providers/gemini.ts`.
+
+### Integrated Document Viewer
+- Open official documents directly in the app: the Process Notice and the Salary Table (Anexo I).
+- A lightweight PDF viewer component handles display; a mock layout is available for development.
+- Implementation: documents in `src/components/documents/ProcessoSeletivoPdf.tsx` and `src/components/documents/Anexo1SalarioPdf.tsx`; viewer in `src/components/common/PdfViewer.tsx` and mock in `src/components/common/MockPdfLayout.tsx`.
+
+### Responsive Design and Theming
+- Tailwind CSS utility classes ensure a fluid, responsive layout across desktop, tablet, and mobile.
+- Light/Dark theme support for comfortable viewing; theme selection persists during a session.
+- Implementation: layout/styles across components (e.g., `src/components/common/Header.tsx`).
+
+### Data, Types, and Utilities
+- Job data source: `src/data/jobs.ts` with TypeScript types in `src/types/index.ts`.
+- Currency helpers: `src/utils/currency.ts` for consistent remuneration formatting.
+- Search utilities: `src/utils/jobSearch.ts` centralizes text normalization and scoring.
+
+### Loading and Error States
+- Dedicated loading spinner for async UI states (e.g., chatbot requests).
+- Implementation: `src/components/Chatbot/Spinner.tsx`.
+
 ## 🚀 Tech Stack
 
 - **Frontend**: React, TypeScript
@@ -65,8 +113,8 @@ The project follows a modular and scalable architecture, designed for maintainab
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/patrickcruzutfpr/processo-seletivo-pge
-    cd processo-seletivo-pge
+    git clone https://github.com/patrickcruzutfpr/processo-seletivo-pge-2
+    cd processo-seletivo-pge-2
     ```
 
 2.  **Set up environment variables:**
