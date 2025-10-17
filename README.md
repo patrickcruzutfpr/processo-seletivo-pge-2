@@ -1,5 +1,17 @@
 # Painel Processo Seletivo PGE-SP
 
+[![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react&logoColor=white&labelColor=20232a)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-6.2.0-646CFF?logo=vite&logoColor=white&labelColor=111827)](https://vitejs.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-3178C6?logo=typescript&logoColor=white&labelColor=000000)](https://www.typescriptlang.org/)
+[![Google Gemini API](https://img.shields.io/badge/Google%20Gemini%20API-1.25.0-1a73e8?logo=google&logoColor=white&labelColor=000000)](https://www.npmjs.com/package/@google/genai)
+[![Node.js >= 18](https://img.shields.io/badge/Node.js-%E2%89%A5%2018-339933?logo=node.js&logoColor=white&labelColor=000000)](https://nodejs.org/)
+
+[![Last Commit](https://img.shields.io/github/last-commit/patrickcruzutfpr/processo-seletivo-pge-2)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/commits)
+[![Open Issues](https://img.shields.io/github/issues/patrickcruzutfpr/processo-seletivo-pge-2)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/issues)
+[![Repo Size](https://img.shields.io/github/repo-size/patrickcruzutfpr/processo-seletivo-pge-2)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2)
+[![Contributors](https://img.shields.io/github/contributors/patrickcruzutfpr/processo-seletivo-pge-2)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/graphs/contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/patrickcruzutfpr/processo-seletivo-pge-2/pulls)
+
 An interactive and AI-powered job board designed to explore positions and functions available in a public selection process for the Procuradoria Geral do Estado de São Paulo (PGE-SP). This application provides a modern, user-friendly interface for potential candidates to search, filter, and understand the available roles in detail.
 
 ![Project Screenshot](screenshot-painel-processo-seletivo-pge-spo.png)
