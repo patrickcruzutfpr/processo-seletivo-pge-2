@@ -44,7 +44,26 @@ An interactive and AI-powered job board designed to explore positions and functi
 - [Documentation](#-documentation)
 - [License](#-license)
   - [Credits](#credits)
-  
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- An active API key for the Google Gemini API.
+
+### Local Development
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/patrickcruzutfpr/processo-seletivo-pge-2
+    cd processo-seletivo-pge-2
+    ```
+
+2.  **Set up environment variables:**
+    The application requires a Google Gemini API key to be available as an environment variable named `API_KEY`. The application is configured to access this key via `process.env.API_KEY`.
+
+3.  **Run the application:**
+    This project is ready to run in a compatible web development environment. Once the environment is set up and the API key is configured, the application can be served locally.  
 
 ## ✨ Key Features
 
@@ -142,26 +161,6 @@ The project follows a modular and scalable architecture, designed for maintainab
 - **Separation of Concerns**: Logic is separated from the UI. For instance, AI communication logic is in `/services`, while the chat UI is in `/components/Chatbot`.
 - **Modularity**: Components are grouped by feature, making them easy to find and manage.
 - **AI Service Abstraction**: The `aiService.ts` file provides a generic interface for interacting with any AI model. This makes it simple to swap `Gemini` with another provider like `OpenAI` in the future without refactoring the components that use it.
-
-## ⚙️ Getting Started
-
-### Prerequisites
-
-- An active API key for the Google Gemini API.
-
-### Local Development
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/patrickcruzutfpr/processo-seletivo-pge-2
-    cd processo-seletivo-pge-2
-    ```
-
-2.  **Set up environment variables:**
-    The application requires a Google Gemini API key to be available as an environment variable named `API_KEY`. The application is configured to access this key via `process.env.API_KEY`.
-
-3.  **Run the application:**
-    This project is ready to run in a compatible web development environment. Once the environment is set up and the API key is configured, the application can be served locally.
 
 ## 🤖 AI Service Abstraction
 
