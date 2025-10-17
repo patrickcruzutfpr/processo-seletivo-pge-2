@@ -24,6 +24,9 @@ An interactive and AI-powered job board designed to explore positions and functi
 ## 📑 Index
 
 - [Key Features](#key-features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Local Development](#local-development)
 - [Features in Detail](#features-in-detail)
   - [Dynamic Job List](#dynamic-job-list)
   - [Advanced Search & Filtering](#advanced-search--filtering)
@@ -37,9 +40,6 @@ An interactive and AI-powered job board designed to explore positions and functi
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
   - [Key Architectural Concepts](#key-architectural-concepts)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Local Development](#local-development)
 - [AI Service Abstraction](#ai-service-abstraction)
 - [Documentation](#-documentation)
 - [License](#-license)
