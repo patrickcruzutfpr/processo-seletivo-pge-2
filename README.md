@@ -66,11 +66,10 @@ The project follows a modular and scalable architecture, designed for maintainab
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/patrickmcruz/processo-seletivo-pge-spo
-    cd processo-seletivo-pge-spo
     ```
 
 2.  **Set up environment variables:**
-    The application requires a Google Gemini API key to be available as an environment variable named `API_KEY`. The application is configured to access this key via `process.env.API_KEY`.
+    The application requires a Google Gemini API key to be available as an environment variable named `GEMINI_API_KEY`. The application is configured to access this key via `process.env.GEMINI_API_KEY`.
 
 3.  **Run the application:**
     This project is ready to run in a compatible web development environment. Once the environment is set up and the API key is configured, the application can be served locally.
